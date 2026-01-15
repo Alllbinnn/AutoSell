@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "autosell",
+  "version": "${version}",
+  "name": "AutoSell",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/autosell/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "at.albin.autosell.client.AutosellDataGenerator"
+    ],
+    "client": [
+      "at.albin.autosell.client.AutosellClient"
+    ],
+    "main": [
+      "at.albin.autosell.Autosell"
+    ]
+  },
+  "mixins": [
+    "autosell.mixins.json",
+    {
+      "config": "autosell.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
